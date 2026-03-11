@@ -16,7 +16,7 @@ class Aluno:
 class GeradorUffMail:
     @staticmethod
     def gerar_opcoes(nome_completo):
-        partes = nome_completo.lower().split() #transforma os nomes em minusculo e faz uma lista onde cada nome da pessoa é uma posição
+        partes = nome_completo.lower().split() 
         primeiro_nome = partes[0] 
         ultimo_nome = partes[-1] 
         
@@ -87,7 +87,7 @@ class SistemaUFF:
             print('O aluno ja possui um UFFmail cadastrado')
             return
         
-        #Gerando opcoes
+    
         print(f'\n{aluno.nome.split()[0]} por favor, escolha uma das opcoes abaixo:')
         opcoes = GeradorUffMail.gerar_opcoes(aluno.nome)
         
@@ -111,4 +111,5 @@ class SistemaUFF:
 if __name__ == "__main__":
     sistema = SistemaUFF('alunos.csv')
     sistema.processar_solicitacao()
+
         
