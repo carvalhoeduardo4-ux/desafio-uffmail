@@ -57,7 +57,7 @@ class SistemaUFF:
         try:
             with open(self.caminhos_csv,mode = 'w', encoding='utf-8') as arquivo:
                 escritor = csv.DictWriter(arquivo, fieldnames=colunas) #recebe um dicionário e o transforma em uma linha de CSV, seguindo a ordem das fieldnames (colunas)
-                escritor.writeheader() #escreve o cabeçalho
+                escritor.writeheader() #Garante que a primeira linha do seu arquivo continue sendo os títulos das colunas.
                 for aluno in self.alunos.values():
                     escritor.writerow({
                         'nome' : aluno.nome,
@@ -113,3 +113,4 @@ if __name__ == "__main__":
     sistema.processar_solicitacao()
 
         
+
